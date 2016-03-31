@@ -1,9 +1,0 @@
-#!/bin/sh
-metric='19252D'
-tags="type=plugin,name=1952D"
-hostname=`hostname`
-timestamp=`date +%s`
-value=`netstat -atnp|grep -E -c ":6100.*ESTABLISHED"`
-counterType='GAUGE'
-echo "[{"endpoint": $hostname, "tags": \"$tags\", "timestamp": $timestamp, "metric": $metric, "value": $value, "counterType": $counterType, "step": 60}]"
-
